@@ -77,11 +77,10 @@ data.frame(clinton_EV_2) %>%
   geom_histogram(binwidth = 1, col = "black", alpha = 0.5) +
   geom_vline(xintercept = 269)
 
-df <- data.frame(clinton_EV, clinton_EV_2) %>% 
+data.frame(clinton_EV, clinton_EV_2) %>% 
   gather(clinton, electoral_votes) %>%
-  mutate(bias = ifelse(clinton == "clinton_EV", "no_bias", "with_bias"))
-
-df %>% ggplot(aes(electoral_votes)) + 
+  mutate(bias = ifelse(clinton == "clinton_EV", "no_bias", "with_bias")) %>%
+  ggplot(aes(electoral_votes)) + 
   geom_histogram(binwidth=1, col="black", alpha = 0.5) + 
   xlab("results") +
   geom_vline(xintercept = 269, col="orange") +
