@@ -1,4 +1,6 @@
 load("rdas/results.rda")
+library(tidyverse)
+library(dslabs)
 
 Bayesian_results%>%
   ggplot(aes(avg, posterior_mean, size = n)) +
