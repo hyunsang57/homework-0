@@ -1,4 +1,5 @@
-load("rdas/results.rda")
+load("homework-0/rdas/results.rda")
+
 library(tidyverse)
 library(dslabs)
 
